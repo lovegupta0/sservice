@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+ <link href="demo.css" rel="stylesheet">
+ 
+    <title>Form</title>
+  </head>
+  <body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<!navbar start>
+
+<nav class="navbar navbar-expand navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">Streaming Service</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+     
+        
+      </ul>
+      <button class="btn btn-outline-primary" data-toggle="modal" data-target="#loginModal">Login</button>
+      <div class="modal text-center" id="loginModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Streaming Service</h5>
+              <button class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <div class="text-center">
+               <h5>Sign in</h5>
+              </div>
+              <form class="form form-signin" method="POST">
+                <div class="form-group mb-0">
+                  
+                  <input type="email" placeholder="username" name="username" class="form-control mb-0 box " required>
+                </div>
+                <div class="form-group">
+                  
+                  <input type="password" placeholder="Password" name="password" class="form-control box" required>
+                </div>
+                <div class="checkbox mb-1">
+                  <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                  </label>
+                </div>
+                <button class="btn btn-primary mb-0" type="submit">Login</button>
+             
+            </div>
+            <div class="modal-footer mt-0">
+              <small>&copy; Copyright Streaming Service</small>
+             
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </nav>
+
+  <!navbar end>
+
+<!form start>
+
+<div class="container">
+<div class="jumbotron">
+  <form class="form" method="POST">
+    <div id="form">
+      <h5 class="text-center">Fill This....</h5>
+      <table style="width:50%">
+        <tr>
+        <td>
+    <label for="fname" class="mb-3">First name:</label>
+  </td>
+  <td>
+    <input type="text" class="form-control box mb-3" id="fname" name="fname" required>
+  </td>
+</tr>
+<tr>
+  <td>
+    <label for="lname" class="mb-3">Last name:</label>
+ 
+  <td>
+    <input type="text" class="form-control box mb-3" id="lname" name="lname" required>
+  </td>
+  </tr>
+  <tr>
+    <td>
+      <label for="email" class="mb-3">Email:</label>
+ 
+    </td>
+    <td>
+      <input type="email" class="form-control box mb-3" id="email" name="email" required>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <label for="password" class="mb-3">Create Password:</label>
+ 
+    </td>
+    <td>
+      <input type="password" class="form-control box mb-3" id="password" name="password" required>
+      <div class="invalid-feedback mb-3">
+        Password Donot Match
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <label for="password" class="mb-3">Conform Password:</label>
+ 
+    </td>
+    <td>
+      <input type="password" class="form-control box mb-3" id="c_password"  onkeyup="op1();" required>
+      <div class="invalid-feedback mb-3">
+        Password Donot Match
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <label for="mobile" class="mb-3">Mobile:</label>
+   
+    <td>
+      <input type="text" class="form-control box mb-3" onclick="op1()" id="mobile" name="mobile" required>
+    </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="DOB" class="mb-3">Date of Birth:</label>
+     
+      <td>
+        <input type="date" id="DOB" name="DOB" class="form-control box mb-3" onclick="op1()" min="1950-01-01" max="2018-12-31" required>
+      </td>
+      </tr>
+  </table>
+  </div>
+
+  <!plan>
+  <div id="plan">
+    <form class="form" method="POST">
+      <h5 class="mb-0">Choose the plan that’s right for you.</h5>
+      <small class="mb=3">Downgrade or upgrade at any time.</small>
+      <table style="width: 100%;" class="mt-3 ">
+      <tr>
+          <th>
+              <h5>Plan</h5>
+          </th>
+          <th>
+              <h5>Basic</h5>
+          </th>
+          <th>
+              <h5>Standard</h5>
+          </td>
+          <th>
+              <h5>Premium</h5>
+          </th>
+          
+      </tr>
+      <tr>
+          <td>
+              <p>Quality</p>
+          </td>
+          <td>
+              <p>Basic HD</p>
+          </td>
+          <td>
+              <p>Full HD</p>
+          </td>
+          <td>
+              <p>Premium 4K</p>
+          </td>
+      </tr>
+      <tr>
+          <td>
+              <p>Premium  Video Availability</video></p>
+          </td>
+          <td>
+              <p>&#10060;</p>
+          </td>
+          <td>
+              <p>&#10004;</p>
+          </td>
+          <td>
+              <p>&#10004;</p>
+          </td>
+      </tr>
+      <tr>
+          <td>
+              <p>Screens you can watch on at the same time</video></p>
+          </td>
+          <td>
+              <p>1</p>
+          </td>
+          <td>
+              <p>2</p>
+          </td>
+          <td>
+              <p>5</p>
+          </td>
+      </tr>
+      <tr>
+          <td>
+              <p>Unlimited movies and TV shows</video></p>
+          </td>
+          <td>
+              <p>&#10060;</p>
+          </td>
+          <td>
+              <p>&#10004;</p>
+          </td>
+          <td>
+              <p>&#10004;</p>
+          </td>
+      </tr>
+      <tr>
+          <td>
+              <p>Price</video></p>
+          </td>
+          <td>
+              <p>0</p>
+          </td>
+          <td>
+              <p>199</p>
+          </td>
+          <td>
+              <p>499</p>
+          </td>
+      </tr>
+      <tr>
+          <td>
+              <p>Choose Plan</video></p>
+          </td>
+          <td>
+              <input type="radio" onclick="plan0()" name="plan" value="0">
+          </td>
+          <td>
+              <input type="radio" onclick="plan199()" name="plan" value="199">
+          </td>
+          <td>
+              <input type="radio" onclick="plan499()" name="plan" value="499">
+          </td>
+      </tr>
+ 
+      </table>
+      <div class="mb-5">
+          <small>HD and Ultra HD availability subject to your Internet service and device capabilities. Not all content available in HD or Ultra HD. See Terms of Use for more details.</small>
+      </div>
+  </div>
+
+  <!plan end here>
+
+  <!payment start here>
+
+  <div id="payment">
+
+    <h3>Payment</h3>
+    <label for="fname" class="mr-3 mb-3">Accepted Cards:</label>
+    <img src="card.jpg" class="mb-3">
+    <table style="width: 75%;">
+        <tr>
+            <td>
+    <label for="cname">Name on Card:</label>
+</td>
+<td>
+    <input type="text" id="cname" name="cardname" class="form-control box mb-3" placeholder="John More Doe">
+</td>
+</tr>
+<tr>
+    <td>
+        <label for="ccnum">Credit card number:</label>
+    </td>
+    <td>
+        <input type="text" id="ccnum" name="cardnumber" class="form-control box mb-3" placeholder="1111-2222-3333-4444">  
+    </td>
+</tr>
+    <tr>
+        <td>
+            <label for="expdate">Exp Date:</label>
+        </td>
+        <td>
+            <input type="text" id="expdate" name="expdate" class="form-control box mb-3" placeholder="MM/YYYY">
+        </td>
+    </tr>
+ 
+    <tr>
+        <td>
+            <label for="cvv">CVV:</label>
+        </td>
+        <td>
+            <input type="text" id="cvv" name="cvv" class="form-control box mb-3" placeholder="352">
+        </td>
+    </tr>
+    </table>
+
+  </div>
+<! payment end>
+
+<div id="interest">
+
+  <h5 class="mb-3">Choose According to your interest</h5>
+  <input type="checkbox" id="action" name="action" value="action">
+  <label for="action"> Action</label><br>
+  <input type="checkbox" id="comedies" name="comedies" value="comedies">
+  <label for="comedies">Comedies</label><br>
+  <input type="checkbox" id="romantic" name="romantic" value="romantic">
+  <label for="romantic">Romantic</label><br>
+  <input type="checkbox" id="adventure" name="adventure" value="adventure">
+  <label for="adventure">Adventure</label><br>
+  <input type="checkbox" id="musicals" name="musicals" value="musicals">
+  <label for="musicals">Musicals</label><br>
+  <input type="checkbox" id="dramas" name="dramas" value="dramas">
+  <label for="dramas">Dramas</label><br>
+  <input type="checkbox" id="documentry" name="documentry" value="documentry">
+  <label for="documentry">Documentry</label><br>
+  <input type="checkbox" id="sci-fi" name="sci-fi" value="sci-fi">
+  <label for="sci-fi">Sci-fi</label><br>
+  <small class="mt-3">It is not mandatory</small>
+
+
+</div>
+
+
+  <div class="text-center">
+    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" id="submit">submit</button>
+    <button class="btn btn-outline-primary mr-3" type="button" id="next1" onclick="nxt1()">Next</button>
+    <button class="btn btn-outline-primary mr-3" type="button" id="prev1" onclick="pre1()">Prev</button>
+    <button class="btn btn-outline-primary mr-3" type="button" id="next2" onclick="nxt2()">Next</button>
+    <button class="btn btn-outline-primary mr-3" type="button" id="prev2" onclick="pre2()">Prev</button>
+    <button class="btn btn-outline-primary mr-3" type="button" id="next3" onclick="nxt3()">Next</button>
+    <button class="btn btn-outline-primary mr-3" type="button" id="prev3" onclick="">Prev</button>
+  </div>
+  </form>
+
+
+</div>
+
+</div>
+<script src="form.js"></script>
+
+</script>
+
+
+
+</body>
+</html>
