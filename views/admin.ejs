@@ -1,0 +1,152 @@
+<%-include("header")-%>
+<link rel="stylesheet" href="admin.css">
+
+<div class="jumbotron   mt-0 ">
+    <div class="container">
+        
+            <div class="text-center">
+            <button class="btn btn-outline-primary mb-3" id='btn1' onclick="add()"><span>Add Multimedia</span></button><br>
+            <div id="div_1">
+            <h5>Add</h5>
+            <button class="btn btn-outline-primary mb-3" id="btn2" onclick="one()">One Media</button><br>
+            <h6 class="mb-3">OR</h6>
+            <a href="multiupload">
+            <button class="btn btn-outline-primary mb-3" id="btn3" >Multiple Media</button>
+            </a>
+            <br>
+        </div>
+    </div>
+        <form action="" method="post" enctype="multipart/form-data">
+        <div id="add1">
+            <table style="width: 100%;">
+                <tr class="mb-3">
+                    <td>
+                        <label for="filename" class="mb-3">Name of Media file:</label>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control mb-3" name="filename">
+                    </td>
+                </tr>
+           
+                <tr>
+                    <td>
+                        <label for="img" class="mb-3">Choose file image to upload:</label>
+                    </td>
+                    <td>
+                        <input class="mb-3" type="file" accept="image/*,.pdf" name="img">
+                    </td>
+                </tr>
+                    <tr>
+                        <td>
+                            <label for="file" class="mb-3">Paste Media file url:</label>
+                        </td>
+                        <td>
+                            <div >
+                            <input type="text" class="form-control mb-3 "  name="media" placeholder="Paste here link of your file">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="premium" class="mb-3 mr-5">Premium Contain:</label>
+                        </td>
+                        <td>
+                            <select name="premium_contain" id="" class="form-control mb-3 w-25">
+                                <option value="none" class="form-control ">Select</option>
+                                <option value="Yes" class="form-control">Yes</option>
+                                <option  value="No" class="form-control">No</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <h6> select file categories:</h6><br>
+                        <input type="checkbox" class="mb-3 mr-3 mt-0" id="action" name="action" value="action">
+                        <label for="action" class="mb-3 mr-3"> Action</label><br>
+                        <input type="checkbox" class="mb-3 mr-3" id="comedies" name="comedies" value="comedies">
+                        <label for="comedies" class="mb-3 mr-3">Comedies</label><br>
+                        <input type="checkbox" class="mb-3 mr-3" id="romantic" name="romantic" value="romantic">
+                        <label for="romantic" class="mb-3 mr-3">Romantic</label><br>
+                        <input type="checkbox" class="mb-3 mr-3" id="adventure" name="adventure" value="adventure">
+                        <label for="adventure" class="mb-3 mr-3">Adventure</label><br>
+                        <input type="checkbox" class="mb-3 mr-3" id="musicals" name="musicals" value="musicals">
+                        <label for="musicals" class="mb-3 mr-3">Musicals</label><br>
+                        <input type="checkbox" class="mb-3 mr-3" id="dramas" name="dramas" value="dramas">
+                        <label for="dramas" class="mb-3 mr-3">Dramas</label><br>
+                        <input type="checkbox" class="mb-3 mr-3" id="documentry" name="documentry" value="documentry">
+                        <label for="documentry" class="mb-3 mr-3">Documentry</label><br>
+                        <input type="checkbox" class="mb-3 mr-3" id="sci-fi" name="scifi" value="scifi">
+                        <label for="sci-fi" class="mb-3 mr-3">Sci-fi</label><br>
+
+                        
+                      
+                        
+        
+
+        </div>
+
+
+        <div class="text-center">
+            
+            <button class="btn btn-outline-primary mb-3" id="submit" type="submit">Add</button>
+        </div>
+
+        </form>
+
+    </div>
+</div>
+
+
+
+<script>
+    
+    $("#div_1").hide();
+    $("#add1").hide();
+    $("#submit").hide();
+    $("#child").hide();4
+    $("#addchild").hide();
+    function add(){
+        $("#btn1").hide();
+        $("#div_1").show();  
+    }
+    function one(){
+        $("#div_1").hide();
+        $("#add1").show();
+        $("#submit").show();
+        $("#addchild").show();
+    }
+    function hello(){
+        alert("hi");
+        randpos();
+    }
+
+    for(var i=1;i<25;i++){
+        var x="#child_"+i;
+       $(x).hide(); 
+    }
+    /*
+    var count=1;
+    function childShow(){
+        var x="#child_"+count;
+        $(x).show();
+        count++;
+
+    }
+    function addChild(){
+            $("#child").show();
+            $("#addchild").hide();
+    }
+    */
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<%-include("footer")-%>
