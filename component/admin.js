@@ -5,11 +5,15 @@ const path=require("path");
 
 mongoose.connect("mongodb://localhost:27017/Streaming_service",{
   useNewUrlParser:true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useCreateIndex: true
 });
 
 const media=new mongoose.Schema({
-  filename:String,
+  filename:{
+    type: String,
+    unique: true
+  },
   img:String,
   media_url:String,
   premium_contain:String
@@ -22,10 +26,11 @@ function action(req){
     const upload=new mongoose.model("action",media);
      var new_upload=new upload({
       filename:req.body.filename,
-      img:req.file.path,
+      img:req.file.path.split("public")[1],
       media_url:req.body.media,
       premium_contain:req.body.premium_contain
      });
+     
      new_upload.save(function(err){
        if(err) throw err;
        else{
@@ -40,7 +45,7 @@ function comedies(req){
   const upload=new mongoose.model("comedies",media);
    var new_upload=new upload({
     filename:req.body.filename,
-    img:req.file.path,
+    img:req.file.path.split("public")[1],
     media_url:req.body.media,
     premium_contain:req.body.premium_contain
    });
@@ -55,7 +60,7 @@ function romantic(req){
   const upload=new mongoose.model("romantic",media);
    var new_upload=new upload({
     filename:req.body.filename,
-    img:req.file.path,
+    img:req.file.path.split("public")[1],
     media_url:req.body.media,
     premium_contain:req.body.premium_contain
    });
@@ -71,7 +76,7 @@ function adventure(req){
   const upload=new mongoose.model("adventure",media);
    var new_upload=new upload({
     filename:req.body.filename,
-    img:req.file.path,
+    img:req.file.path.split("public")[1],
     media_url:req.body.media,
     premium_contain:req.body.premium_contain
    });
@@ -87,7 +92,7 @@ function musicals(req){
   const upload=new mongoose.model("musicals",media);
    var new_upload=new upload({
     filename:req.body.filename,
-    img:req.file.path,
+    img:req.file.path.split("public")[1],
     media_url:req.body.media,
     premium_contain:req.body.premium_contain
    });
@@ -102,7 +107,7 @@ function dramas(req){
   const upload=new mongoose.model("dramas",media);
    var new_upload=new upload({
     filename:req.body.filename,
-    img:req.file.path,
+    img:req.file.path.split("public")[1],
     media_url:req.body.media,
     premium_contain:req.body.premium_contain
    });
@@ -118,7 +123,7 @@ function documentry(req){
   const upload=new mongoose.model("documentry",media);
    var new_upload=new upload({
     filename:req.body.filename,
-    img:req.file.path,
+    img:req.file.path.split("public")[1],
     media_url:req.body.media,
     premium_contain:req.body.premium_contain
    });
@@ -134,7 +139,7 @@ function scifi(req){
   const upload=new mongoose.model("scifi",media);
    var new_upload=new upload({
     filename:req.body.filename,
-    img:req.file.path,
+    img:req.file.path.split("public")[1],
     media_url:req.body.media,
     premium_contain:req.body.premium_contain
    });
@@ -145,7 +150,7 @@ function scifi(req){
 }
 
 
-exports.upload=(req)=>{
+exports.upload=(req,res)=>{
   const val=[req.body.action,req.body.comedies,req.body.romantic,req.body.adventure,req.body.musicals,req.body.dramas,req.body.documentry,req.body.scifi];
   for(var i=0;i<val.length;i++){
     switch (val[i]) {
@@ -160,6 +165,8 @@ exports.upload=(req)=>{
       default: break;
       };
   }
+
+  res.render("admin",{success:'<div class="alert alert-success mb-3" role="alert">File successfully uploaded.......</div>'});
 }
 
 

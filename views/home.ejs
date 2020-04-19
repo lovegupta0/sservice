@@ -1,0 +1,59 @@
+<%-include("header")-%>
+<! carousel>
+<div id="carouselExampleIndicators" class="carousel slide mt-0" data-ride="carousel"  >
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active" style="height: 300px;">
+      <img src="img1.jpg" class="d-block w-100" alt="..." style="height: 300px;" >
+    </div>
+    <div class="carousel-item" style="height: 300px;">
+      <img src="img2.jpg" class="d-block w-100" alt="..." style="height: 300px;">
+    </div>
+    <div class="carousel-item" style="height: 300px;">
+      <img src="img3.jpg" class="d-block w-100" alt="..." style="height: 300px;">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<!body box start>
+<div>
+  <div class="jumbotron  jumbotron-fluid  mt-0 mb-0 ">
+    <div class="container">
+      <% for(var i=0;i<title.length;i++){%>
+    <table style="width:100%" class="text-center ml-3">
+      <h4 class="ml-5 mt-3" >
+        <%=title[i]%>
+        </h4>
+
+        <tr>
+          <% for(var j=0;j<new_item.length;j++){ %>
+            <td>
+              <a href="<%=new_item[i][j].media_url%>">
+              <div class="card mr-2" style="width: 14rem;">
+  <img style="height: 300px;"  class="card-img mb-0" src="<%=new_item[i][j].img%>" >
+</div>
+</a>
+            </td>
+        <%  } %>
+          </tr>
+
+    </table>
+    <%}%>
+  </div>
+  </div>
+  </div>
+
+
+
+<%-include("footer")-%>

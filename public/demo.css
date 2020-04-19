@@ -1,6 +1,20 @@
-html,
+
 body {
+  background-color: #d7fffd;
   height: 100%;
+}
+.jumbotron{
+padding: 1rem 1rem;
+background-color: #d7fffd;
+}
+.bg-light{
+  background-color: #cae8d5 !important;
+}
+.h{
+  color: #900c3f !important;
+}
+.navbar-brand{
+  color: #900c3f !important;
 }
 
 

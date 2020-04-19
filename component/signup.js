@@ -78,17 +78,17 @@ function del_rec(body){
 }
 
 
-exports.response= function (body,res){
+exports.response= function (body,res,cookies){
     if(body.fname){
         insertion(body,res)
     }
     else{
-     login(body,res);
+     login(body,res,cookies);
         
     }
 }
 
-async function login(body,res){
+async function login(body,res,cookies){
     var login="select *from signup where email=" + '"'+body.username+'"';
 
    await conn.query(login,function(err,result){
@@ -97,6 +97,14 @@ async function login(body,res){
             if(result.length>0){
                 var pass=md5(body.password);
                 if(pass===result[0].password){
+
+                    if(body.rememberme){
+                        var d=new Date();
+                        d=new Date(d).valueOf()+7* 24 * 60 * 60 * 1000;
+                        var date=new Date(d);
+                        cookies.set("streaming_service",body.username,{expires:date, signed: true });
+                    }
+
                     if(body.username==="admin@admin.com"){
                         res.redirect("/admin");
                     }
